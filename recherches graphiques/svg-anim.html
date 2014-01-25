@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function gradient(){
+	
+		//Récupération de la valeur du input "range"
+
+		var grad = document.getElementById('out').value;
+		var grad1 = 2-grad;
+		var x = -5;
+		
+		//Couleurs 1 et 2 par défaut (blanc)
+		
+		var couleur1 = 'fff';
+		var couleur2 = 'fff';
+		
+		//Sélection de la première couleur
+		
+		if (document.getElementById('colour1').checked) {
+			couleur1 = document.getElementById('colour1').value;
+		}
+		if (document.getElementById('colour2').checked) {
+			couleur1 = document.getElementById('colour2').value;
+		}
+		if (document.getElementById('colour3').checked) {
+			couleur1 = document.getElementById('colour3').value;
+		}
+		if (document.getElementById('colour4').checked) {
+			couleur1 = document.getElementById('colour4').value;
+		}
+		if (document.getElementById('colour5').checked) {
+			couleur1 = document.getElementById('colour5').value;
+		}
+		if (document.getElementById('colour6').checked) {
+			couleur1 = document.getElementById('colour6').value;
+		}
+		
+		//Sélection de la deuxième couleur
+		
+		if (document.getElementById('colour1bis').checked) {
+			couleur2 = document.getElementById('colour1bis').value;
+		}
+		if (document.getElementById('colour2bis').checked) {
+			couleur2 = document.getElementById('colour2bis').value;
+		}
+		if (document.getElementById('colour3bis').checked) {
+			couleur2 = document.getElementById('colour3bis').value;
+		}
+		if (document.getElementById('colour4bis').checked) {
+			couleur2 = document.getElementById('colour4bis').value;
+		}
+		if (document.getElementById('colour5bis').checked) {
+			couleur2 = document.getElementById('colour5bis').value;
+		}
+		if (document.getElementById('colour6bis').checked) {
+			couleur2 = document.getElementById('colour6bis').value;
+		}
+		
+		//Dégradé d'arrière plan du input "range"
+		
+		function gradient2(){
+		
+			var grad2 = document.getElementById('out').value;
+			var grad2Neg = grad2*-1;
+		
+			var a = grad2-30;
+			var b = 30-grad2Neg;
+		
+			var test = document.getElementById('valeur');
+			test.style.background="linear-gradient(90deg, #" + couleur1 + " " + a + "%, #" + couleur2 + " " + b + "%)";
+
+		}
+		
+		gradient2();
+
+		//Dégradé de la courbe
+		
+		var color1 = document.getElementById("first");
+			color1.setAttribute('offset', grad1*-1 + '%');
+			color1.setAttribute('stop-color', "#" +  couleur1);
+		var color2 = document.getElementById("second");
+			color2.setAttribute('offset', grad - x + '%');
+			color2.setAttribute('stop-color', "#" + couleur2);
+
+	}
+</script>
+<style>
+	body{
+	background:whitesmoke;
+	}
+	#rangeContainer{
+	width: 100%;
+	padding: 0;
+	padding-left: 70px;
+	}
+	#out{
+	display:none;
+	}
+	#premier
+	{
+	width: 100%;
+	text-align: center;
+	padding-left: 120px;
+	height: 100px;
+	}
+	#courbe
+	{
+	width: 100%;
+	padding-left: 30px;
+	}
+	.all
+	{
+		width: 33.33%;
+		margin: 0 33.33% 0 33.33%;
+	}
+	form p
+	{
+		border: 1px solid rgba(125, 125, 125, 0.3);
+		margin: 0;
+		padding: 3px;
+		margin-bottom: 5px;
+		margin-left: 5px;
+		float: left;
+		border-radius: 30px;
+		height: 15px;
+		width: 15px;
+	}
+	input[type='radio'] {
+		-webkit-appearance: none !important;
+		margin: 0;
+		height: 10px;
+		width: 10px;
+		margin-left: -1px;
+		margin-bottom: 2px;
+		border-radius: 20px;
+		text-align: center;
+
+	}
+	.colour1 input[type='radio'] {
+		background-color: #FFFF00;
+	}
+	.colour2 input[type='radio'] {
+		background-color: #F993A9;
+	}
+	.colour3 input[type='radio'] {
+		background-color: #DD0A0A;
+	}
+	.colour4 input[type='radio'] {
+		background-color: #E7C5EA;
+	}
+	 .colour5 input[type='radio']{
+		background-color: #3B5A85;
+	}
+	.colour6 input[type='radio'] {
+		background-color: #A8E5F6;
+	}
+	input[type='range'] {
+		-webkit-appearance: none !important;
+		margin:0;
+		height:15px;
+		width: 300px;
+		border-radius: 20px;
+	}
+	input[type='range']::-webkit-slider-thumb {
+		-webkit-appearance: none !important;
+		border: 1px solid rgba(125, 125, 125, 0.3);
+		height:30px;
+		width:5px;
+		background: white;
+	}
+	a:hover {
+  		position: relative;
+	}
+	.colour1 a[title]:hover:after
+	{
+		content: attr(title);
+		color: #333;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		background: #FF3;
+		font-family: sans-serif;
+		color: #808080;
+		border-radius: 10px;
+		padding: 2px;
+		text-shadow:0px 0px 1px gray;
+		text-transform: capitalize;
+	}
+	.colour2 a[title]:hover:after
+	{
+		content: attr(title);
+		color: #;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		background: #F993A9;
+		font-family: sans-serif;
+		color: #808080;
+		border-radius: 10px;
+		padding: 2px;
+		text-shadow:0px 0px 1px gray;
+		text-transform: capitalize;
+	}
+	.colour3 a[title]:hover:after
+	{
+		-webkit-appearance:none !important;
+		background: #FFFF00;
+		color: whitesmoke;
+	}
+	.colour4 a[title]:hover:after
+	{
+		-webkit-appearance:none !important;
+		background: #FFFF00;
+		color: whitesmoke;
+	}
+	.colour5 a[title]:hover:after
+	{
+		-webkit-appearance:none !important;
+		background: #FFFF00;
+		color: whitesmoke;
+	}
+	.colour6 a[title]:hover:after
+	{
+		-webkit-appearance:none !important;
+		background: #FFFF00;
+		color: whitesmoke;
+	}
+	/* min-width pour moyennes résolutions */
+	@media screen and (max-width: 900px) {
+		.all
+		{
+			margin: 0 23.33% 0 23.33%;
+			width: 50%;
+		}
+	}
+	/* max-width pour faibles résolutions */
+	@media screen and (max-width: 640px) {
+		.all
+		{
+			margin: 0;
+			width: 100%;
+		}
+		#rangeContainer{
+		padding-left: 20%;
+		}
+		#courbe
+		{
+		padding-left: 10%;
+		}	
+		#premier
+		{
+		padding-left: 32%;
+		}
+	}
+</style>
+</head>
+<body>
+	<div class="all">
+	<div id="premier">
+	<form id="colourChoices1" name="colourChoices">
+		<p class="colour1"><a title="melancolique"><input type="radio" name="colour1" id="colour1" value="FFFF00" onclick="gradient();" ></a></p>
+		<p class="colour2"><a title="calme"><input type="radio" name="colour1" id="colour2" value="F993A9" onclick="gradient();" ></p></a>
+		<p class="colour3"><input type="radio" name="colour1" id="colour3" value="DD0A0A" onclick="gradient();" ></p>
+		<p class="colour4"><input type="radio" name="colour1" id="colour4" value="E7C5EA" onclick="gradient();" ></p>
+		<p class="colour5"><input type="radio" name="colour1" id="colour5" value="3B5A85" onclick="gradient();" ></p>
+		<p class="colour6"><input type="radio" name="colour1" id="colour6" value="A8E5F6" onclick="gradient();" ></p>
+	</form>
+	<form id="colourChoices2" name="colourChoices" style="clear:both;">
+		<p class="colour1"><input type="radio" name="colour2" id="colour1bis" value="FFFF00" onclick="gradient();" ></p>
+		<p class="colour2"><input type="radio" name="colour2" id="colour2bis" value="F993A9" onclick="gradient();" ></p>
+		<p class="colour3"><input type="radio" name="colour2" id="colour3bis" value="DD0A0A" onclick="gradient();" ></p>
+		<p class="colour4"><input type="radio" name="colour2" id="colour4bis" value="E7C5EA" onclick="gradient();" ></p>
+		<p class="colour5"><input type="radio" name="colour2" id="colour5bis" value="3B5A85" onclick="gradient();" ></p>
+		<p class="colour6"><input type="radio" name="colour2" id="colour6bis" value="A8E5F6" onclick="gradient();" ></p>
+	</form>
+	</div>
+	<div id="courbe">
+	<svg
+	   xmlns:dc="http://purl.org/dc/elements/1.1/"
+	   xmlns:cc="http://creativecommons.org/ns#"
+	   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	   xmlns:svg="http://www.w3.org/2000/svg"
+	   xmlns="http://www.w3.org/2000/svg"
+	   xmlns:xlink="http://www.w3.org/1999/xlink"
+	   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+	   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+	   width="400"
+	   height="100"
+	   id="svg6190"
+	   version="1.1"
+	   inkscape:version="0.48.4 r9939"
+	   sodipodi:docname="courbe.svg">
+	  <defs
+		 id="defs6192">
+		  <linearGradient id="MyGradient">
+			<stop id="first" offset="35%" stop-color="#fff" />
+			<stop id="second" offset="50%" stop-color="#fff" />
+		  </linearGradient>
+	  </defs>
+	  <sodipodi:namedview
+		 id="base"
+		 pagecolor="#ffffff"
+		 bordercolor="#666666"
+		 borderopacity="1.0"
+		 inkscape:pageopacity="0.0"
+		 inkscape:pageshadow="2"
+		 inkscape:zoom="1.7460215"
+		 inkscape:cx="164.97745"
+		 inkscape:cy="-12.37327"
+		 inkscape:document-units="px"
+		 inkscape:current-layer="layer1"
+		 showgrid="false"
+		 inkscape:window-width="953"
+		 inkscape:window-height="423"
+		 inkscape:window-x="104"
+		 inkscape:window-y="104"
+		 inkscape:window-maximized="0" />
+	  <metadata
+		 id="metadata6195">
+		<rdf:RDF>
+		  <cc:Work
+			 rdf:about="">
+			<dc:format>image/svg+xml</dc:format>
+			<dc:type
+			   rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+			<dc:title></dc:title>
+		  </cc:Work>
+		</rdf:RDF>
+	  </metadata>
+	  <g
+		 inkscape:label="Calque 1"
+		 inkscape:groupmode="layer"
+		 id="layer1"
+		 transform="translate(0,-987.3622)">
+		<path
+		   style="fill:none;stroke:url(#MyGradient);stroke-width:4;stroke-miterlimit:10;stroke-linecap: round;"
+		   inkscape:connector-curvature="0"
+		   stroke-miterlimit="10"
+		   d="m 2.131606,1041.3974 c 0,0 24.611509,-39.054 33.534458,-22.079 8.92284,16.9866 7.226004,30.5704 17.410876,22.079 10.193358,-8.495 16.984644,-37.4332 28.874799,-26.36 11.890016,11.0738 18.685581,50.252 25.481141,28.955 6.7912,-21.2774 11.88584,-51.85243 22.075,-51.85243 10.19324,0 38.36881,37.36703 44.66553,42.46183 6.29681,5.0942 223.69498,3.3894 223.69498,3.3894"
+		   id="path2535" />
+	  </g>
+	</svg>
+</div>
+	<form id="rangeContainer" onsubmit="return false" oninput="out.value = valeur.valueAsNumber; gradient();">
+		<input type="range" min="0" max ="100" value="50" id="valeur" name="valeur">
+		<output name="out" id="out" for="valeur" >50</output>
+	</form>
+</div>
+</body>
+</html>
