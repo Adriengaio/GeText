@@ -1,8 +1,8 @@
 <?php
 date_default_timezone_set('Europe/Paris');
 
-define ("ROOT_PATH","/Applications/XAMPP/xamppfiles/htdocs");
-define ("WEB_ROOT","http://localhost/GeText");
+define ("ROOT_PATH","C:/XAMPP/htdocs/www");
+define ("WEB_ROOT","http://localhost/www/GeText");
 define ("ROOT_PATH_SITE",ROOT_PATH."/GeText");
 
 

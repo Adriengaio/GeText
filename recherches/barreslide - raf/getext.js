@@ -9,33 +9,28 @@ function go() {
 		draggable (4,"#cursor4", "#p4", 'régulier',"#slide4","#pi4");
 
 
-function draggable(number,cursor, p, feeling, slide, pi) {
-
-
-// fonction draggable avec jquery, su l'axe X
-$( cursor ).draggable({ axis: "x" , containment: "parent" });
-
-// À chaque fois que la division est draggée
-$( cursor ).on( "drag", function( event, ui ) {
-
-
-var posx = $(cursor).css("left"); //position en pixel :
-var posx = posx.replace('px', ''); //enlever le 'px'
-var posx = posx/25.6; // la position passe de 0->192 à 0->10
-var posx = Math.floor(posx); // on enlèvre la partie décimale
-
-
-// On écrit la variable dans le paragraphe correspondant
-$(cursor).html(posx);
-$(p).html(feeling);
-
-} );
- 	
-
-
-
-
-
-};
+	function draggable(number,cursor, p, feeling, slide, pi) {
+	
+	
+		// fonction draggable avec jquery, su l'axe X
+		$( cursor ).draggable({ axis: "x" , containment: "parent" });
+	
+		// À chaque fois que la division est draggée
+		$( cursor ).on( "drag", function( event, ui ) {
+	
+	
+		var posx = $(cursor).css("left"); //position en pixel :
+		posx = posx.replace('px', ''); //enlever le 'px'
+		posx = posx/25.6; // la position passe de 0->192 à 0->10
+		posx = Math.floor(posx); // on enlèvre la partie décimale
+	
+	
+		// On écrit la variable dans le paragraphe correspondant
+		$(cursor).html(posx);
+		$(p).html(feeling);
+	
+		} );
+	 	
+		};
 
 };
